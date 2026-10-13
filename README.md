@@ -1,41 +1,48 @@
 # Power Flow and Network Analysis
 
-A MATLAB application for constructing bus admittance and impedance matrices, solving steady-state power flow, and exploring transient stability. Includes Gauss-Seidel, Newton-Raphson and fast-decoupled load-flow implementations and multiple example bus systems.
+A MATLAB application for studying power flow and transient stability in electrical networks. It combines network-matrix construction, steady-state solvers and generator-response visualization.
 
-## Tools used
+## What it does
 
-MATLAB, App Designer-style UI components, matrix calculations and iterative numerical methods.
+- Builds bus admittance and impedance matrices.
+- Solves power flow using Gauss-Seidel, Newton-Raphson and Fast Decoupled Load Flow.
+- Explores generator rotor-angle behavior after a network disturbance.
+- Provides example networks from small teaching systems to larger bus configurations.
 
-## How to run
+## Results
 
-1. Make this folder the MATLAB current folder.
-2. Run `power_flow_app`.
-3. Select a network and calculation method.
-4. Review bus quantities and plots. Start with a small network before comparing larger cases.
+Figures from the [technical report](docs/power-flow-analysis-report.pdf) show the influence of fault-clearing time on generator dynamics in the six-bus study.
 
-## Files
+### Fault cleared at 0.4 seconds
+
+![Generator rotor-angle response after fault clearing at 0.4 seconds](docs/results/stable-rotor-angle-response.png)
+
+### Fault cleared at 0.5 seconds
+
+![Generator rotor-angle response after fault clearing at 0.5 seconds](docs/results/rotor-angle-response.png)
+
+## Tools
+
+MATLAB, numerical linear algebra, iterative power-flow methods and time-domain simulation.
+
+## Run
+
+Open this folder in MATLAB and run:
+
+```matlab
+power_flow_app
+```
+
+Select a network, configure its data and choose an analysis method.
+
+## Project files
 
 | File | Purpose |
 | --- | --- |
-| `power_flow_app.m` | Main graphical application |
-| `Gauss_Seidel.m`, `Newton_Raphson.m`, `FDLF.m` | Power-flow methods |
-| `Y_bus.m`, `Z_bus.m` | Network matrix construction |
-| `st.m` | Transient-stability interface and calculation |
-| `system*bus.m` | Example network data |
-| Other `.m` files | Matrix helpers and system selection |
+| `power_flow_app.m` | Application entry point |
+| `Gauss_Seidel.m`, `Newton_Raphson.m`, `FDLF.m` | Power-flow solvers |
+| `Y_bus.m`, `Z_bus.m` | Network matrices |
+| `st.m` | Transient-stability study |
+| `system*.m` | Example bus systems |
 
-## Limitations
-
-Convergence depends on the case data, initialization and solver assumptions. Example cases and numerical results have not been independently benchmarked against a reference power-system package.
-
-## Project context
-
-Prepared from academic project files. Collaborative work remains team work; personal names are omitted from this public copy. Original technical comments and interfaces may be in French. No new license has been assigned.
-
-## Technical report
-
-[Read the original French technical report](docs/power-flow-analysis-report.pdf). Personal names and document metadata were removed from this copy. Technical content is preserved and may describe earlier study settings.
-
-## Verification status
-
-Source structure and reference names were inspected. MATLAB startup did not complete in this environment, so MATLAB and Simulink execution could not be verified.
+Developed as a collaborative academic engineering project.
