@@ -1,8 +1,8 @@
 # Power Flow and Network Analysis
 
-A MATLAB application for studying power flow and transient stability in electrical networks. It combines network-matrix construction, steady-state solvers and generator-response visualization.
+I developed a MATLAB application for power-flow and transient-stability studies, with network matrices, iterative solvers and plots of generator rotor-angle response.
 
-## What it does
+## Main features
 
 - Builds bus admittance and impedance matrices.
 - Solves power flow using Gauss-Seidel, Newton-Raphson and Fast Decoupled Load Flow.
@@ -45,4 +45,4 @@ Select a network, configure its data and choose an analysis method.
 | `st.m` | Transient-stability study |
 | `system*.m` | Example bus systems |
 
-Developed as a collaborative academic engineering project.
+Academic group project at the National Polytechnic School of Algiers.
